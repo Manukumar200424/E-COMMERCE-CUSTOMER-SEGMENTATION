@@ -1,0 +1,44 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+.env.*
+
+# Jupyter / notebook artifacts
+.ipynb_checkpoints/
+
+# Python packaging
+*.egg-info/
+.dist/
+build/
+dist/
+
+# Logs and local runtime files
+*.log
+*.sqlite3
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Flask / app static cache (if generated)
+instance/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Data files you may want to keep local only
+# Uncomment if you do not want to commit large CSV data files
+# ecommerce_customers.csv

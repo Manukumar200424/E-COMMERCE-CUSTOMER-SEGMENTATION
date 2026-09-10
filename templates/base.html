@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}E-Commerce Segmentation{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">ES</span><span><strong>ecom</strong> segments<small>Customer intelligence</small></span></a>
+      <nav>
+        <span class="nav-label">Workspace</span>
+        <a class="nav-link {% if page == 'dashboard' %}active{% endif %}" href="{{ url_for('index') }}"><span>01</span>Dashboard</a>
+        <a class="nav-link {% if page == 'segmentation' %}active{% endif %}" href="{{ url_for('segmentation') }}"><span>02</span>Predict segment</a>
+        <a class="nav-link {% if page == 'customers' %}active{% endif %}" href="{{ url_for('customers') }}"><span>03</span>Customer data</a>
+        <a class="nav-link {% if page == 'visualization' %}active{% endif %}" href="{{ url_for('visualization') }}"><span>04</span>Visualizations</a>
+        <span class="nav-label nav-label-lower">Reference</span>
+        <a class="nav-link {% if page == 'about' %}active{% endif %}" href="{{ url_for('about') }}"><span>05</span>About project</a>
+      </nav>
+      <div class="sidebar-note"><span class="status-dot"></span><div><strong>Model online</strong><small>K-Means / 4 clusters</small></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><span class="mobile-brand">E-COMMERCE / SEGMENTS</span><span class="topbar-note">Analytics dashboard <i></i> Model refreshed automatically</span></header>
+      {% block content %}{% endblock %}
+      <footer>Academic Data Science Project <span>•</span> CSV-powered customer intelligence</footer>
+    </main>
+  </div>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
